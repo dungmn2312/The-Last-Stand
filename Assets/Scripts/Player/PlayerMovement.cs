@@ -140,18 +140,13 @@ public class PlayerMovement : MonoBehaviour
         AdjustSP();
         if (moveInput != Vector2.zero)
             PlaySound();
-
-        //if (Input.GetKeyDown(KeyCode.L))
-        //{
-        //    UIManager.Instance.BloodScreenEffect();
-        //}
     }
 
     private void Move()
     {
         moveDirection = transform.right * moveInput.x + transform.forward * moveInput.y;
         normalizedValue = (moveInput.x != 0 && moveInput.y != 0) ? 1f / 0.71f : 1f;
-        characterController.Move((transform.right * moveInput.x + transform.forward * moveInput.y) * playerSpeed * Time.deltaTime);
+        characterController.Move(moveDirection * playerSpeed * Time.deltaTime);
     }
 
     private void PlaySound()
