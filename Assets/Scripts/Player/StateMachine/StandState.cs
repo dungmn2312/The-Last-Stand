@@ -44,12 +44,9 @@ public class StandState : IPlayerState
         if (playerMovement.moveInput.y > 0 && playerController.SP > 0)
         {
             playerMovement.isSprinting = true;
-            if (playerMovement.isSprinting)
-            {
-                sprintValue = 0.5f;
-                playerMovement.SetPlayerSpeed(sprintSpeed);
-                playerMovement.SetSoundTime(sprintSoundTime);
-            }
+            sprintValue = 0.5f;
+            playerMovement.SetPlayerSpeed(sprintSpeed);
+            playerMovement.SetSoundTime(sprintSoundTime);
         }
     }
 
